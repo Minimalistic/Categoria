@@ -7,6 +7,8 @@ from sqlalchemy.orm import backref
 Base = declarative_base()
 
 # Stores user data.
+
+
 class User(Base):
     __tablename__ = 'user'
 
@@ -16,6 +18,8 @@ class User(Base):
     picture = Column(String(250))
 
 # Stores restaurant data.
+
+
 class Restaurant(Base):
     __tablename__ = 'restaurant'
 
@@ -33,6 +37,8 @@ class Restaurant(Base):
         }
 
 # Stores a restaurant's menu data.
+
+
 class MenuItem(Base):
     __tablename__ = 'menu_item'
 
@@ -44,10 +50,9 @@ class MenuItem(Base):
     restaurant_id = Column(Integer, ForeignKey('restaurant.id'))
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
-    restaurant = relationship(
-                            Restaurant,
-                            backref=backref("children",
-                            cascade="all, delete"))
+    restaurant = relationship(Restaurant,
+                              backref=backref("menu_item",
+                                              cascade="all, delete"))
 
     @property
     def serialize(self):
