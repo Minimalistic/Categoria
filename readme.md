@@ -1,6 +1,6 @@
 ## Categoria : A Restaurants and Menus App
 
-![Categoria Cover Image](/img/categoria_cover_image.png)
+![Categoria Cover Image](my_restaurants_and_menus/img/categoria_cover_image.png)
 
 This is a catalog website that stores and displays restaurants, menus and menu items. It also permits adding and deleting entries. It was created for a Udacity project.
 
